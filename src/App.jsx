@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // In Page CSS using the styled-components library
 const MainContainer = styled.div`
@@ -21,7 +23,7 @@ const Buttons = styled.button`
 const ResetContainer = styled.div`
 /* Reset Counter Function */
 `
-function App() {
+const App = () => {
     // Count State
   const [count, setCount] = useState(0)
 
@@ -36,7 +38,7 @@ function App() {
       setCount(count - 1)
     }
     else {
-      console.log("Can't decrease Beyond 0")
+      toast("Can't decrease Below 0")
     }
   }
 
@@ -46,11 +48,25 @@ function App() {
       setCount(0)
     }
     else {
-      console.log("Number already 0")
+      toast("Number already 0")
     }
   }
   return (
     <>
+      {/* Toast Container */}
+      <ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      />
+      {/* Counter App Container */}
         <MainContainer>
       <Container>
         <Buttons onClick={decreaseCount}>-</Buttons>
