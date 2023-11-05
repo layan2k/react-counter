@@ -6,22 +6,56 @@ import 'react-toastify/dist/ReactToastify.css';
 // In Page CSS using the styled-components library
 const MainContainer = styled.div`
 /* Main Container Wrapper*/
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  gap: 30px;
 `
 const Container = styled.div`
 /* Container For Increase, Decrease and Count Container */
-
+  color:"#fff";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
 `
 
 const CountContainer = styled.div`
 /* Our Count Number Container */
-
+  font-size: 40px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out ;
 `
 const Buttons = styled.button`
 /* Buttons Inpage Styling */
-
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  &:hover{
+    border-color: #646cff;
+  }
+  &:active{
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  &:after{
+    outline: none;
+  }
 `
 const ResetContainer = styled.div`
 /* Reset Counter Function */
+  color:"#fff";
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 const App = () => {
     // Count State
