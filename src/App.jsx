@@ -72,7 +72,7 @@ const App = () => {
       setCount(count - 1)
     }
     else {
-      toast("Can't decrease Below 0")
+      toast("No Number below 0 is permitted")
     }
   }
 

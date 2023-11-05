@@ -50,4 +50,14 @@ it('should reset the counter to 0 when the reset button is clicked', () => {
 
     expect(countContainer).toBeInTheDocument();
 });
+
+it('should not reset the counter to 0 if it is already 0', async () => {
+    render(<App />);
+
+    const resetButton = screen.getByText('Reset Button');
+
+    fireEvent.click(resetButton);
+
+    expect(await screen.findByText('Number already 0')).toBeInTheDocument();
+});
 });
